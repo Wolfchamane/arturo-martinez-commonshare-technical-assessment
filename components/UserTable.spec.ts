@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
 import UserTable from './UserTable.vue';
+import type { UserModel } from '~/utils/user.model';
 
-const users = [
+const users: UserModel[] = [
     { id: '1', email: 'a@a.com', name: 'A', createdAt: '', updatedAt: '', password: '', country: 'ESP', role: 'admin' }
 ];
 

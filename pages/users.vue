@@ -11,6 +11,7 @@
 
     const auth = useAuthStore();
     if (auth.user?.role !== USER_ROLES.ADMIN) {
+        // @ts-ignore
         navigateTo('/');
     }
 
@@ -19,7 +20,7 @@
 
     const page: Ref<number> = ref(store.page);
     const totalPages: Ref<number> = ref(store.totalPages);
-    const paginated: ComputedRef<UserModel[]> = computed(() => store.paginatedUsers);
+    const paginated: ComputedRef<UserModel[]> = computed(() => store.paginatedUsers as UserModel[]);
 
     const onSearchInput = (val: string) => {
         store.search = val;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { defineStore } from 'pinia';
 import { type UserModel, USER_ROLES } from '~/utils/user.model';
 

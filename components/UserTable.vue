@@ -4,7 +4,7 @@
 
     defineProps<{ users: UserModel[] }>();
 
-    const mapUserCountryToCountryName = (code: string) => {
+    const mapUserCountryToCountryName = (code: string): string => {
         const country = countries.find(c => c.code === code);
 
         return country ? country.name : 'Unknown';

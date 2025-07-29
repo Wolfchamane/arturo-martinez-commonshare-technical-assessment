@@ -1,11 +1,25 @@
 <script setup lang="ts">
+    import { onMounted, type Ref, ref, nextTick } from 'vue';
     import NavBar from '~/components/NavBar.vue';
     import { useUsersStore } from '~/stores/users';
+
     const store = useUsersStore();
-    await store.fetchUsers();
-    const total = store.users.length;
-    const admins = store.adminCount;
-    const users = store.userCount;
+    const total: Ref<number> = ref(0);
+    const admins: Ref<number> = ref(0);
+    const users: Ref<number> = ref(0);
+
+    const loadDashboardInformation = async (): Promise<void> => {
+        await store.fetchUsers();
+        await nextTick(() => {
+            total.value = store.users.length;
+            admins.value = store.adminCount;
+            users.value = store.userCount;
+        });
+    };
+
+    onMounted(() => {
+        loadDashboardInformation();
+    });
 </script>
 
 <template>

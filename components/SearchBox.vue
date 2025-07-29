@@ -1,3 +1,12 @@
+<script setup lang="ts">
+    import { ref } from 'vue';
+    const search = ref('');
+    const emit = defineEmits(['update:search']);
+    function onInput() {
+        emit('update:search', search.value);
+    }
+</script>
+
 <template>
     <input
         v-model="search"
@@ -7,11 +16,3 @@
         @input="onInput"
     />
 </template>
-<script setup lang="ts">
-    import { ref } from 'vue';
-    const search = ref('');
-    const emit = defineEmits(['update:search']);
-    function onInput() {
-        emit('update:search', search.value);
-    }
-</script>

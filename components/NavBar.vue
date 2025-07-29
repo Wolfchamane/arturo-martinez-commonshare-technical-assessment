@@ -1,15 +1,11 @@
 <script setup lang="ts">
     import { useAuthStore } from '~/stores/auth';
-    import { onMounted } from 'vue';
 
     const auth = useAuthStore();
+
     const onLogout = () => {
         auth.logout();
     };
-
-    onMounted(() => {
-        console.log(auth);
-    });
 </script>
 
 <template>
