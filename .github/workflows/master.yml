@@ -16,8 +16,14 @@ jobs:
               with:
                   node-version: '20'
             - run: npm ci
+              name: Install Dependencies
             - run: npm run format:check
+              name: Check Code Formatting
             - run: npm run lint:check
+              name: Check Code Linting
             - run: npm run stylelint:check
+              name: Check Style Linting
             - run: npm run types:check
+              name: Check TypeScript Types
             - run: npm run test:unit
+              name: Run Unit Tests
