@@ -11,7 +11,7 @@
 
     const auth = useAuthStore();
     if (auth.user?.role !== USER_ROLES.ADMIN) {
-        // @ts-expect-error
+        // @ts-expect-error navigateTo is missing in the type definitions
         navigateTo('/');
     }
 

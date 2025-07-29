@@ -6,7 +6,7 @@
 
     onMounted(() => {
         if (!auth.user) {
-            // @ts-expect-error
+            // @ts-expect-error navigateTo is missing in the type definitions
             navigateTo('/login');
         }
     });

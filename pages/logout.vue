@@ -1,6 +1,6 @@
 <script setup lang="ts">
     const onLogoutClick = () => {
-        // @ts-expect-error
+        // @ts-expect-error navigateTo is missing in the type definitions
         navigateTo('/login');
     };
 </script>
