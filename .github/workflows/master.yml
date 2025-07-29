@@ -21,7 +21,7 @@ jobs:
               name: Check Code Formatting
             - run: npm run lint:check
               name: Check Code Linting
-            - run: npm run stylelint:check
+            - run: npm run styles:check
               name: Check Style Linting
             - run: npm run types:check
               name: Check TypeScript Types
