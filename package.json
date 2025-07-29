@@ -1,0 +1,44 @@
+{
+    "name": "nuxt-app",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "lint:check": "npx eslint --config eslint.config.ts --ext .ts,.vue .",
+        "lint:fix": "npx eslint --config eslint.config.ts --ext .ts,.vue . --fix",
+        "styles:check": "npx stylelint --config .stylelintrc.json '**/*.{css,scss}",
+        "styles:fix": "npx stylelint --config .stylelintrc.json '**/*.{css,scss} --fix",
+        "format:fix": "npx prettier --config .prettierrc --write .",
+        "format:check": "npx prettier --config .prettierrc --check .",
+        "types:check": "nuxt types",
+        "test:unit": "vitest"
+    },
+    "dependencies": {
+        "@nuxt/icon": "^1.15.0",
+        "@nuxtjs/tailwindcss": "^6.14.0",
+        "@pinia/nuxt": "^0.11.2",
+        "nuxt": "^3.18.0",
+        "vue": "^3.5.18",
+        "vue-router": "^4.5.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.32.0",
+        "@eslint/json": "^0.13.1",
+        "@vue/test-utils": "^2.4.6",
+        "eslint": "^9.32.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-vue": "^10.3.0",
+        "globals": "^16.3.0",
+        "happy-dom": "^18.0.1",
+        "jiti": "^2.5.1",
+        "prettier": "^3.6.2",
+        "stylelint": "^16.22.0",
+        "stylelint-config-standard": "^38.0.0",
+        "typescript-eslint": "^8.38.0",
+        "vitest": "^3.2.4"
+    }
+}
