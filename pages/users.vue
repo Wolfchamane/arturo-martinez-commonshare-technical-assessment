@@ -7,19 +7,17 @@
     import { useUsersStore } from '~/stores/users';
     import { useAuthStore } from '~/stores/auth';
     import { type UserModel, USER_ROLES } from '~/utils/user.model';
-    import { computed, ref, type Ref, type ComputedRef } from 'vue';
+    import { computed, ref, type Ref, type ComputedRef, onMounted } from 'vue';
 
     const auth = useAuthStore();
     if (auth.user?.role !== USER_ROLES.ADMIN) {
-        // @ts-ignore
+        // @ts-expect-error
         navigateTo('/');
     }
 
     const store = useUsersStore();
-    await store.fetchUsers();
-
-    const page: Ref<number> = ref(store.page);
-    const totalPages: Ref<number> = ref(store.totalPages);
+    const page: Ref<number> = ref(1);
+    const totalPages: Ref<number> = ref(0);
     const paginated: ComputedRef<UserModel[]> = computed(() => store.paginatedUsers as UserModel[]);
 
     const onSearchInput = (val: string) => {
@@ -36,6 +34,14 @@
         store.page = val;
         page.value = store.page;
     };
+
+    const fetchUsers = async (): Promise<void> => {
+        await store.fetchUsers();
+        page.value = store.page;
+        totalPages.value = store.totalPages;
+    };
+
+    onMounted(() => fetchUsers());
 </script>
 
 <template>
@@ -50,7 +56,7 @@
             <UserTable :users="paginated" />
         </div>
         <div class="flex items-center justify-center mt-2">
-            <PaginationControls :page="page" :totalPages="totalPages" @update:page="onPageEvent" />
+            <PaginationControls :page="page" :total-pages="totalPages" @update:page="onPageEvent" />
         </div>
     </div>
 </template>

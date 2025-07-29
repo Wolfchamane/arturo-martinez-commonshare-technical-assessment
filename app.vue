@@ -6,7 +6,7 @@
 
     onMounted(() => {
         if (!auth.user) {
-            // @ts-ignore
+            // @ts-expect-error
             navigateTo('/login');
         }
     });

@@ -1,6 +1,6 @@
 <script setup lang="ts">
     const onLogoutClick = () => {
-        // @ts-ignore
+        // @ts-expect-error
         navigateTo('/login');
     };
 </script>
