@@ -29,6 +29,8 @@
     "devDependencies": {
         "@eslint/js": "^9.32.0",
         "@eslint/json": "^0.13.1",
+        "@nuxt/types": "^2.18.1",
+        "@nuxt/typescript-build": "^3.0.2",
         "@vue/test-utils": "^2.4.6",
         "eslint": "^9.32.0",
         "eslint-config-prettier": "^10.1.8",

@@ -8,10 +8,10 @@
     import { useAuthStore } from '~/stores/auth';
     import { type UserModel, USER_ROLES } from '~/utils/user.model';
     import { computed, ref, type Ref, type ComputedRef, onMounted } from 'vue';
+    import { navigateTo } from 'nuxt/app';
 
     const auth = useAuthStore();
     if (auth.user?.role !== USER_ROLES.ADMIN) {
-        // @ts-expect-error navigateTo is missing in the type definitions
         navigateTo('/');
     }
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
+    import { navigateTo } from 'nuxt/app';
+
     const onLogoutClick = () => {
-        // @ts-expect-error navigateTo is missing in the type definitions
         navigateTo('/login');
     };
 </script>
