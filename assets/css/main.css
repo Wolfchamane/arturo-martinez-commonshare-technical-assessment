@@ -1,11 +1,12 @@
+/* stylelint-disable selector-id-pattern */
 html,
 body,
 #__nuxt {
-    /* stylelint-disable-line selector-id-pattern */
     display: block;
     height: 100dvh;
     overflow: hidden;
 }
+/* stylelint-enable selector-id-pattern */
 
 html,
 body {
