@@ -10,14 +10,15 @@
         "postinstall": "nuxt prepare",
         "lint:check": "npx eslint --config eslint.config.ts --ext .ts,.vue .",
         "lint:fix": "npx eslint --config eslint.config.ts --ext .ts,.vue . --fix",
-        "styles:check": "npx stylelint --config .stylelintrc.json '**/*.{css,scss}",
-        "styles:fix": "npx stylelint --config .stylelintrc.json '**/*.{css,scss} --fix",
+        "styles:check": "npx stylelint --config .stylelintrc '**/*.{css,scss}'",
+        "styles:fix": "npx stylelint --config .stylelintrc '**/*.{css,scss}' --fix",
         "format:fix": "npx prettier --config .prettierrc --write .",
         "format:check": "npx prettier --config .prettierrc --check .",
         "types:check": "nuxt typecheck",
         "test:unit": "vitest"
     },
     "dependencies": {
+        "@iconify-json/carbon": "^1.2.11",
         "@nuxt/icon": "^1.15.0",
         "@nuxtjs/tailwindcss": "^6.14.0",
         "@pinia/nuxt": "^0.11.2",

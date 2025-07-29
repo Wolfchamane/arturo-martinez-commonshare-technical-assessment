@@ -42,9 +42,15 @@
     <div class="p-6">
         <NavBar />
         <h1 class="text-2xl font-bold mb-4">Users Admin</h1>
-        <SearchBox @update:search="onSearchInput" />
-        <CountryFilter @update:country="onCountryChange" />
-        <UserTable :users="paginated" />
-        <PaginationControls :page="page" :totalPages="totalPages" @update:page="onPageEvent" />
+        <div class="flex align-center justify-between">
+            <SearchBox @update:search="onSearchInput" />
+            <CountryFilter @update:country="onCountryChange" />
+        </div>
+        <div class="my-4 border border-rounded p-4">
+            <UserTable :users="paginated" />
+        </div>
+        <div class="flex items-center justify-center mt-2">
+            <PaginationControls :page="page" :totalPages="totalPages" @update:page="onPageEvent" />
+        </div>
     </div>
 </template>
