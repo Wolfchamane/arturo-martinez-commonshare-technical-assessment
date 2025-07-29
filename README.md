@@ -24,3 +24,5 @@ npm run dev
 ```
 
 Now you can access the application at http://localhost:3000.
+
+Use any of provided users at [./server/data/users.json](./server/data/users.json) to log in, all users do have the same password: `password123`.
