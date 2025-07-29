@@ -14,7 +14,7 @@
         "styles:fix": "npx stylelint --config .stylelintrc.json '**/*.{css,scss} --fix",
         "format:fix": "npx prettier --config .prettierrc --write .",
         "format:check": "npx prettier --config .prettierrc --check .",
-        "types:check": "nuxt types",
+        "types:check": "nuxt typecheck",
         "test:unit": "vitest"
     },
     "dependencies": {
@@ -39,6 +39,7 @@
         "stylelint": "^16.22.0",
         "stylelint-config-standard": "^38.0.0",
         "typescript-eslint": "^8.38.0",
-        "vitest": "^3.2.4"
+        "vitest": "^3.2.4",
+        "vue-tsc": "^3.0.4"
     }
 }

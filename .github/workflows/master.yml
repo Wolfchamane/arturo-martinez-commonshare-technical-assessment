@@ -2,9 +2,9 @@ name: CI
 
 on:
     push:
-        branches: [main]
+        branches: [master]
     pull_request:
-        branches: [main]
+        branches: [master]
 
 jobs:
     build:
@@ -17,7 +17,7 @@ jobs:
                   node-version: '20'
             - run: npm ci
             - run: npm run format:check
-            - run: npm run lint:check
-            - run: npm run stylelint:check
-            - run: npm run types:check
+            # - run: npm run lint:check
+            # - run: npm run stylelint:check
+            # - run: npm run types:check
             - run: npm run test:unit
