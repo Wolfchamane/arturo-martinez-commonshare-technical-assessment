@@ -8,7 +8,6 @@ on:
 
 jobs:
     test_code:
-        description: 'Evaluates code format, lint issues, types integrity and runs unitary tests'
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
